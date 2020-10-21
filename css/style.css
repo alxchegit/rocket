@@ -1,0 +1,49 @@
+* {
+	margin:0;
+	padding: 0;
+	box-sizing: border-box;
+	font-size: 14px;
+	font-style: normal;
+	/*font-family: 'Roboto', sans-serif;*/
+	font-family: 'Ubuntu', sans-serif;
+	border:none;
+	outline: none;
+}
+
+nav.navbar {
+	width: 100%;
+	height: 74px;
+	background-color: #FFF;
+	padding-top: 11px
+}
+
+.top-screen {
+	background: url("../img/image.png"), rgba(53, 53, 53, 0.5);
+	background-repeat: no-repeat;
+	background-size: cover;
+	width: 100%;
+	height: calc(507px + 74px);
+	margin-top: 74px;
+	 
+}
+.top-screen__left-part h1{
+	  font-size: 40px;
+	  font-weight: 700;
+	  line-height: 46px;
+	  color: #FFF;
+	  min-width: 570px;
+	  margin-top:125px;
+}
+	
+/*MAIN-SCREEN  MAIN-SCREEN  MAIN-SCREEN  MAIN-SCREEN  MAIN-SCREEN  MAIN-SCREEN  */
+.main-screen {
+	width: 100%;
+	height: calc(1277px - 163px - 507px - 74px);
+}
+
+/*FOOTER  FOOTER  FOOTER  FOOTER  FOOTER  FOOTER  FOOTER  FOOTER  FOOTER  */
+
+footer {
+	width: 100%;
+	height: 163px;
+}
