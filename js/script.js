@@ -1,5 +1,6 @@
- 
- 	const sliderContainer = document.querySelector(".slider-container");
+
+const sliderContainer = document.querySelector(".slider-container");
+
 	let xhr = new XMLHttpRequest();
 		xhr.open("GET", "getnews.php?action=getnews");
 		xhr.send();
@@ -57,7 +58,6 @@
  
 
 const myClose = document.querySelector(".my-close");
-const navBar = document.querySelector("#myNavbar");
 const button = document.querySelector("button.navbar-toggle");
 
 	myClose.addEventListener("click", function(){
