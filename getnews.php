@@ -1,8 +1,6 @@
 <?php 
 	
-	$action = isset($_GET['action']) ? $_GET['action'] : false;
-	$data_news = array();
-	$return = array("data" => array(), "errors" => "");
+	
 	$host = "10.15.3.2";
 	$username = "username";
 	$password = "password";
@@ -79,14 +77,19 @@
 			),
 	);
 
+function connectToDatbase($host, $username, $password, $database){
+	$db = @new mysqli($host,$username,$password,$database);
+		return $db;
+}
 
-	if($action && $action === "getnews") {
-		$db = @new mysqli($host,$username,$password,$database);
+function getnews($news){		
+	$return = array("data" => array(), "errors" => "");
+	$db = connectToDatbase("10.15.3.2", "username", "password", "database");
 
-		if ($db->connect_errno) {
+	if ($db->connect_errno) {
 			$error = "Error connection MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
 			$return['data'] = $news;
-		} else {
+		} else { 
 
 			$select = $db->query("SELECT `news_date`, `news_title`, `news_link` FROM `news` ORDER BY `news_date` DESC LIMIT 10");
 
@@ -97,15 +100,15 @@
 				$select->close();
 				$db->close();
 			} else {
-				$error = "select is not object. probably nothing find";
+				$error = "select is not object. probably nothing found";
 			}
-
-		}
+		}	 
 
 		$return['errors'] = $error;
-		echo json_encode($return);
+		return $return;
+	 
+}
 
-	} else {
-		return false;
-	}
+
+	
  

@@ -16,10 +16,13 @@ nav.navbar {
 	background-color: #FFF;
 	padding-top: 11px
 }
-.header-navbar-right, ul.navbar-right>pre{
+.header-navbar-right, ul.navbar-right li:last-child{
 	display: none;
 }
 
+.navbar-right {
+	list-style: none;
+}
 nav.navbar .my-close {
 	display: none;
 }
@@ -294,13 +297,13 @@ footer .logo {
 		background-color: unset!important;
 		position: relative;
 	}
-	.collapse.in .navbar-right>p, .collapse.in .navbar-right>pre {
+	.collapse.in .navbar-right li>p, .collapse.in .navbar-right li>pre  {
 		position: absolute;
 	}
-	.collapse.in .navbar-right>p:nth-child(2){
+	.collapse.in .navbar-right li:nth-child(2){
 		display: none;
 	}
-	.collapse.in .navbar-right>p:first-child{
+	.collapse.in .navbar-right li:first-child p{
 		font-weight: bold;
 		font-size: 20px;
 		line-height: 23px;
@@ -327,8 +330,10 @@ footer .logo {
 		margin-top: 24px;
 		margin-left: 17px;
 	}
-	ul.navbar-right>pre{
+	ul.navbar-right li:last-child {
 		display: block;
+	}
+	ul.navbar-right li:last-child pre{
 		font-family: Ubuntu;
 		font-style: normal;
 		font-weight: normal;
