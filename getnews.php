@@ -84,7 +84,7 @@ function connectToDatbase($host, $username, $password, $database){
 
 function getnews($news){		
 	$return = array("data" => array(), "errors" => "");
-	$db = connectToDatbase("10.15.3.2", "username", "password", "database");
+	$db = connectToDatbase("localhost", "username", "password", "database");
 
 	if ($db->connect_errno) {
 			$error = "Error connection MySQL: (" . $db->connect_errno . ") " . $db->connect_error;
